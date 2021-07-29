@@ -1,4 +1,4 @@
-This is as I said, a folder of exercises that I made/am making with all I learned/am learning from my HTML/CSS course part of my Javascript/Typescript course. This Javascript and Typescript course was made by the Software Developer and the course teacher: Luiz Otávio Miranda.
+This is as I said, a folder of exercises that I have made/am making with all I have learned/am learning from my HTML/CSS course part of my Javascript/Typescript course. This Javascript and Typescript course was made by the Software Developer and the course teacher: Luiz Otávio Miranda.
 
 His Udemy Channel:
 
