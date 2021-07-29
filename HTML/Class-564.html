@@ -1,0 +1,39 @@
+<!-- Formularios e Inputs HTML - Parte 1 -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>my HTML</title>
+    </head>
+    <body>
+        <section>
+            <form action="#" method="GET" target="_blank" autocomplete="off">
+                <h1>Cabeçalho</h1>
+                <p>Formulario</p>
+
+                <fieldset>
+                    <legend>Descrição</legend>
+                    <p>
+                        <input type="text">
+                    </p>
+                </fieldset>
+            </form>
+        </section>
+    </body>
+</html>
+
+<!--
+    HTML:
+    
+    <section> -> to organize my form structure inside of it
+    
+    <form>          -> formulario
+        action=""   -> descrevendo para onde eu vou mandar esse formulario
+        method=""   -> metodo do formulario ([get - padrao] [post - comum]) -> mais avançado, visto em javascript
+        target=""   -> ou seja, eu quero enviar na pagina, mas nessa pagina ou na pagina: target="...", recarrega em outra pagina (normalmente na mesma pagina)
+        autocomplete="off" -> para não ficar dizendo coisas que eu ja inseri anteriormente no formulario (normalmente nao se mexe com isso )
+    
+    <filedset> O elemento HTML <fieldset> é usado para agrupar elementos, assim como labels (<label>), dentro de um formulário web.    
+        <legend> legenda
+            <input type="text"> -> input -> entrada, entra algo -> type= -> do tipo   -> "text" -> texto
+-->

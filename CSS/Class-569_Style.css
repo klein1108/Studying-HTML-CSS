@@ -1,0 +1,215 @@
+/* Seletores básicos do CSS - Parte 1 */
+
+
+/* Seletor 1 - Seleciona tudo */
+
+*{
+    margin: 0;  /* -> zera a margem */
+    padding: 0; /* -> zera o padding */    
+}
+
+/*  Normalmente usado dessa forma, fazemos isso por que se nao fizermos em todo elemento que formos escrever
+vamos ter que adicionar essas propriedades 
+
+----------------------------------------------------------------------------------------------------------------*/
+
+/* Seletor 2 - Seletor por caminho */
+
+div section p,
+div section h1{
+    background-color: red;
+}
+
+/* (filho desse) -> (filho desse) -> (selecionado) 
+        div      ->    section    ->      p
+
+Por isso o P que esta fora da div nao foi pintado, pois ele nao faz parte dessa sequencia
+.
+.
+.
+Dentro desse caminho também existe um h1, caso eu queira selecionar o h1 juntamente dos p eu adiciono uma virgula
+e incluo o caminho desse item: 
+
+/* (filho desse) -> (filho desse) -> (selecionado),
+   (filho desse) -> (filho desse) -> (selecionado){}
+    
+        div      ->    section    ->      p,
+        div      ->    section    ->      h1
+
+Se eu n incluir o caminho, apenas a virgula e o h1 ocorrera de todos os h1 dentro do body serem selecionados.
+Esse modo de seleçao pode ser utilizado com id's e classes tambem
+
+----------------------------------------------------------------------------------------------------------------*/
+/* Seletor 3 - Classe*/
+
+.color-palegreen{
+    color: palegreen;
+}
+/*
+    Forma comum de aplicar uma classe
+*/
+.main-content h2{
+    font-style: italic;
+    background-color: rosybrown;
+}
+/*
+    Estilizando elementos filhos/dentro de um item dessa classe, no caso o h2. O h2
+foi apenas um item utilizado, podemos trocar ele por qualquer coisa, como por exemplo
+uma outra classe:*/
+
+.main-content .sub-content h2{
+    font-style: italic;
+    background-color: rosybrown;
+}
+/*
+    Nesse caso estilizamos h2 dentro de dois elementos pai e filho com classes diferentes
+    Outra forma de escrever isso para ser super especifico seria colocar a tag antes do .
+
+    por exemplo: .main-content h2.sub-content{}
+    vejamos um exemplo pratico:
+*/
+.first h2.second{
+    font-style: italic;
+    color: rosybrown;
+}
+
+/*
+    Mesmo todos (h1, h2 e h3) tendo a mesma classe, foi apenas selecionado o h2, pois esta especificado
+no caminho do CSS isso:
+
+    Dentro da tag de classe="first" -> o item h2 dentro da tag de classe="second"
+
+----------------------------------------------------------------------------------------------------------------*/
+
+/*! Herança !*/
+
+.pai-0{
+    color: crimson;
+}
+/*
+O que acontece?
+
+    <div class="pai"> - :
+        Pai             :
+        <div>           :
+            Filha       :
+        </div>          :
+    </div>            - :
+
+    Temos duas divs diferentes, a primeira div esta fora e a segunda esta dentro dessa,
+quando selecionamos a classe="pai", estamos selecionando a div de fora, porem, por consequencia da herança,
+a div de dentro também é selecionada, pois ela faz parte da primeira, logo dizemos que a segunda div herdou
+da primeira, pois nao estamos diretamente selecionando ela, mas por estar dentro da outra ela também recebe
+as alteraçoes.
+
+Inherited from div.pai
+
+
+Toda a div provavelmente esta como
+div{
+    color:inherited;
+}
+na configuração padrao do computador, que é o que faz com que as div herdem uma caracteristica, no caso a cor,
+da outra div, mas se alterarmos para initial, a div nao herdara mais a cor da div pai.
+*/
+
+div{
+    color:initial;
+}
+
+/* Mesmo com a div initial ao inves de inherited, ainda posso selecionar da forma que aprendemos anteriormente, com a
+Seleção de Dependente: */
+.pai-1 .filha-1{
+    color: crimson;
+}
+
+/* Podemos também fazer:
+    .pai.filha{}
+que é totalmente diferente do de cima.
+
+.pai .filha == dentro da tag de classe "pai" -> dentro da/na tag de classe "filha"
+
+porem se fizermos:
+
+.pai.filha == <tag class="pai filha">
+
+é uma tag onde existem mais de uma classe, que é o que aconteceu, a declaração de mais de uma classe para a mesma tag
+--------------------------------------------------------------------------------------------------------------------*/
+/* Seletor de Filhos Diretos*/
+/* no Exemplo:
+
+<div class="papai">
+            <div>
+                Papai
+                <div class="filha outra papai qualquer">
+                    Filha
+                    <div class="filha outra papai qualquer">
+                        Filha da filha
+                    </div>
+                </div>
+            </div>
+        </div>
+
+Eu posso selecionar apenas a Filha, que é filha do papai, sem selecionar a filha da filha*/
+.filinha{
+    margin-left: 20px;
+}
+/*...para que consigamos ver melhor 
+(posso fazer tambem: 
+
+.etc{
+    margin-left: 20px;
+}(pois ambas estao filinha etc, caso tivessem nomes diferentes de classe mas uma em comum)
+
+para que eu consiga selecionar a filha direta do pai, temos que fazer o seguinte:
+*/
+
+.papai>.filinha{
+    color: red;
+}
+
+/* Esse seletor se chama Child Selector, que significa (pode ver apenas selecionando o seletor com o mouse, no vscode):
+    <element class="papai">
+        <element class="filinha">
+
+.
+.
+.
+    Caso eu queira selecionar a filha da filha, basta eu continuar selecionando:
+        .papai>.filinha>.filinha{
+            color: red;
+        }
+    (claro, eu precisaria apagar a linha anterior, senao ambas seriam pintadas e todas as filinhas estariam na cor veremlha)
+
+    Isso faz com que ele selecione a filha direta, da filha direta.
+
+    tanto que se eu colocar uma outra div dentro de uma filha direta do pai, como por exemplo:
+
+    <div>
+        <div class="papai">
+            Papai
+            <div class="filinha etc">
+                Filha 1
+                <div class="filinha etc">
+                    Filha da filha 1
+                </div>
+            </div>
+
+        ---<div>---(div adicionado)
+                <div class="filinha etc">
+                    Filha 2
+                    <div class="filinha etc">
+                        Filha da filha 2
+                    </div>
+                </div>
+        ---</div>---(div adicionado)
+        
+        </div>
+    </div>
+
+    a segunda filha nao sera mais filha direta, agora o div adicionado sera o filho direto, e a antiga filha direta se tornara
+a filha da filha, e a filha da filha anterior se tornara a filha da filha da filha
+*/
+
+
+

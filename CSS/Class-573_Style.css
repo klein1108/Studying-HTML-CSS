@@ -1,0 +1,28 @@
+/* ( Pseudo-classe :not() ) */
+
+.container *:not(.mid){
+    color: darkslateblue;
+}
+/* :not(x) -> is a pseudo-class that "DONT" aply the changes for the element x 
+
+For example:
+
+.container *:not(.mid){
+    color: darkslateblue;
+}
+
+(inside the class="containser") (select all of them) (but this (.mid)) 
+    (to change the color of the letters to darkslateblue)
+
+*/
+.one:checked ~ h3{
+    background-color: yellow;
+}
+
+.one:not(:checked) ~ .mid{
+    background-color: yellow;
+}
+
+.two:checked~h1{
+    visibility: hidden;
+}

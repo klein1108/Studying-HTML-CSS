@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>My HTML</title>
+
+        <!-- (CSS) -->
+        <style>
+            #Formatted-Code{
+                color:lime;
+                background-color: black; 
+                display: block; 
+            }
+            code{
+                color:lime;
+                background-color: black; 
+            }
+            #img-html{
+                width: 120px;
+                height:120px
+            }
+            #img-ytb{
+                width: 41px;
+                height: 29px; 
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <h1>
+            Meu Título
+        </h1>
+        <!--        (TAGS QUE PODEM IR DENTRO DA TAG <P>):                                    -->
+        <p>
+            <b>negrito</b><br>
+            <strong>strong</strong><br>
+            <i>italico</i><br>
+            <em>enfase</em><br>
+            <del>delete</del><br>
+            <s>risco</s><br>
+            <ins>inserir</ins><br>
+            <u>underline</u><br>
+        
+            <!-- sup = caractere em cima-->
+            a<sup>2</sup> = b<sup>2</sup> + c<sup>2</sup><br> 
+
+            <!-- sup = caractere embaixo-->
+            Fórmula Química da Água: H<sub>2</sub>O<br> 
+
+            <q cite="https://www.google.com">Estou com sorte</q><br> <!-- q = tag ""-->
+
+            <a href="https://www.youtube.com/">
+                Youtube(Nessa Guia)
+            </a><br>
+
+            <a href="https://www.youtube.com/" target="_blank">
+                Youtube(Nova Guia)
+            </a><br>
+
+            <img id="img-html" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png" alt="HTML Logo"><br>
+            <a href="https://www.youtube.com/" target="_blank">
+                <img id="img-ytb" src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png" alt="Youtube Logo">
+            </a><br>
+
+<!-- Errado, porem boa ideia (e funcionou, ver o que fazer)
+         <a href="https://www.youtube.com/" target="_blank">
+            <button style="animation: alternate;"></button>
+        </a>
+-->   
+
+        </p>
+<!--        (TAGS QUE DEVEM IR FORA DA TAG <P>):                                    -->
+
+        <!-- bloco de citação que nao pode estar dentro de um Paragrafo (<p>) porem pode ter um Paragrafo (<p>) dentro dele-->
+        <blockquote cite="CoolKids.mp4">
+            I wish that I could be like the cool kids, cause all the cool kids, they seem to fit in."
+        </blockquote>
+
+        <hr><!-- tag de linha horizontal-->
+
+        <code> <!-- Style code--> 
+            int x=0;
+            for(int i=10;i>=x;i--){
+                if(i==x)
+                    printf("Parabens!!\n");
+                else
+                    printf("ainda nao\n");
+            }
+        </code>
+        <!-- mesmo que code sendo feito para desenvolvedores escreverem linhas de codigo especificas
+        dentro da pagina web, apenas o code nao poderia fazer a formatação dos espaços sozinho, muito menos
+        com a tag <p>, por isso usamos a tag <pre>, que tem a função de deixa pre determinado como formatação
+        da forma que o usuario escreveu-->
+        <hr>
+        <pre>
+            <code id="Formatted-Code"> 
+    int x=0;
+    for(int i=10;i>=x;i--){
+        if(i==x)
+        printf("Parabens!!\n");
+        else
+        printf("ainda nao\n");
+    }
+        </code>
+    </pre>
+
+        <p>
+        ocorreu de eu fazer uma mudança na forma do display, alternado de inline para block, para
+        que o fundo todo da parte de codigo do usuario esteja em preto e nao desformatada com a cor, como 
+        mostra abaixo:
+        </p><br>
+        <span>(sem a parte do Display:block;):</span><br>
+        <pre><code><!--Style code--> 
+    int x=0;
+    for(int i=10;i>=x;i--){
+        if(i==x)
+        printf("Parabens!!\n");
+        else
+        printf("ainda nao\n");
+    }
+    </code></pre>
+<hr>
+    <span>Eu sou uma informação em formato inline</span>
+    <div>Eu sou uma informação em formato block</div>
+
+    <p>
+        <span style="color: green;">ALO</span> moçada!!<br>
+    </p>
+    <div style="color: rebeccapurple;">div chegando ai familia</div>
+        <!-- podemos ver como fica desformatado quando incluimos dentro de uma escrita de paragrafo
+        formatada, um texto <span> com display:inline(formatada) e quando colocamos um texto <div>
+         com display:blcok(desformatado)
+
+         na verdade o <div> nao pode ser posto junto do <p>:
+        <p><div>Bom dia</div> me chamo lucas</p>
+        error!  
+        
+        -->
+
+    </body>
+</html>
+
+<!--
+    *<b>Lorem</b> -> deixa a palavra em negrito
+    *<strong>dolor</strong> -> se refere a palavra com mais força em sua forma semantica (CUIDADO!!!)
+    *<i>sit</i> -> deixa a palvra em italico
+    *<em>amet</em> -> se refere a palavra com mais enfase em sua  forma semantica (eu Aaamoooo comer pastel)
+    *<del>delete</del> -> risca a palavra pois ela esta sendo excluida na forma semantica
+    *<s>risco</s> -> risca a palavra
+    *<ins>inserir</ins> -> insere uma palavra nova na forma semantica
+    *<u>underline</u> -> coloca uma linha em baixo da palavra
+
+    existem tags fisicas e tags logicas, onde, visualmente, aparentam a mesma coisa porem semanticamente fazem
+    grande diferença... <strong>tomar cuidado!</strong> kkkk.
+
+    Semantico = colocar a devida tag no seu respectivo lugar para que toda forma de publico consiga entender
+    (deficientes visuais, robos leitores de texto, leitura de site padrão, etc...)
+
+    <a href="https://www.youtube.com/"> algo </a> -> tag link (abre nessa mesma aba) precisa ser posto o https
+    <a href="https://www.youtube.com/" target="_blank">algo</a> -> target indica a forma na qual voce quer abrir esse link
+    target="_blank" -> abre em uma nova guia por exemplo
+
+    <img src="" alt""> -> tag de imagem, onde src = source (onde é a fonte da imagem) posso colocar uma imagem
+                          dentro da propria pasta ou mandar o endereço da imagem de onde ela esta localizada.
+                          alt seria o que a imagem significa, onde é posto uma descrição da mesma pra ser valida
+                          e entendida semanticamente.
+
+<a href="https://www.youtube.com/" target="_blank">
+    <img src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png" alt="Youtube Logo">
+</a> 
+|_____> uma imagem que é um link
+-->

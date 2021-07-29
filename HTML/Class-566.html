@@ -1,0 +1,142 @@
+<!-- Formulario e Inputs - Parte 3 -->
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>My HTML</title>
+        <style>
+            #num{
+                background-color: rgba(8, 255, 234, 20%);
+                width: 150px;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="#" method="GET" target="_blank" autocomplete="off">
+        <p>
+            <label for="data">Date:</label>
+            <input type="date" id="data" name="data" value="2020-04-20">
+                <!--
+                    inout type="date" -> direcionado a data, dd/mm/aaaa + calendario para selecionar, 
+                    acho que o placeholder nao se configura (pois ja existe um padrao: dd/mm/aaaa)
+
+                    o 'value' da data é num formato expecifico que vai ser visto nas aulas de data, mas
+                    supomos que queremos a data: 20/04/2020 (BR)
+                        o formato vai ficar ao contario aaaa-mm-dd -> 2020-04-20
+
+                        lembrando que o value é o valor que vai ser entendido como padrao, ou seja,
+                        ja selecionado/escrito dentro da caixa do input
+
+                -->
+        </p>
+        <br>
+        <p>
+            <label for="data-time">Datetime:</label>
+            <input type="datetime" id="data-time" name="data-time" value="2020-04-20">
+        </p>
+            <!-- That isn't correct! Why not? It is wrong?
+                No! When you select some type and the browser don't seem to understand, link in this
+                case that we selected a datetime type and the browser seems to putted a text type, it means that
+                the browser can't suport this format, and we have to change it.
+
+                datetime -(to)-> datetime-local
+            -->
+        <br>
+        <p>
+            <label for="data-time-local">Datetime:</label>
+            <input type="datetime-local" id="data-time-local" name="local" value="2020-04-20T20:00">            
+                <!-- but if I datetime-local and set the value to "2020-04-02" it won't work as well, because
+                    now I must add the time with the date, so it can't be just (value="2020-04-20") anymore:
+                    EX: date -> 2020-04-20(20/04/2020) time-> 20h
+                        value="2020-04-20T20:00" -> T (from Time and the respective time that you want to be as the default in the input box) 
+                -->
+        </p>
+
+        <p>
+            <label for="TheTime">Time:</label>
+            <input type="time" id="TheTime" name="time" value="20:00:01">
+            <!-- 
+                This is an input from time. Cause we setted the value, the default time inside of the box will be it.
+                    Some browsers, I don't know which, don't support this format, that is:
+                    20:00:01 -> hh:ss:mm (hour:seconds:miliseconds)
+                    if they not support you can just take off the miliseconds part, like this:
+                    20:00 -> hh:ss (hour:seconds)
+            -->
+        </p>
+
+        <p>
+            <label for="colors">Favorite Color</label>
+            <input type="color" id="colors" name="color" value="#FF0000">
+                <!--
+                    This input represent a color option from the user choose, which the value need to be represented in Hexadecimal
+                    EX: Red -> #FF0000
+                -->
+        </p>
+
+        <p>
+            <label for="E-mail">Your Email</label>
+            <input type="email" id="E-mail" name="email" placeholder="Ex.: email@email.com">
+            <!-- 
+                This is an email input, where the user type his email.
+                It is common to have an example inside the box: the placehold -> that we've already seen
+
+                The browser sendS a warning if the email box is filled out incorrectly
+            -->
+        </p>
+
+        <p>
+            <label for="any">File</label>
+            <input type="file" id="any" name="any">
+
+            <!-- this is a file input, which you can search in you computer and put a image to be
+                your profile picture
+            -->
+        </p>
+
+        <!-- in the previous example we configurate a file input where the person can search for whatever FILE he wants.
+        But i can specify what type of file I accept in this input.
+        -->
+        <p>
+            <label for="pic">Profile Picture</label>
+            <input type="file" id="pic" name="pic" accept=".JPG">
+        <!-- Now this is a file input that only accept JPG Files
+            If I wanted only JPG AND mp4, I should say:
+            accept=".JPG,.MP4"
+            I can accept any type of image that exist, just typing:
+            accept="Image/*"
+
+            In that case, the program select the file by its type (Type: Image) instead the type of the file (.JPG,.PNG,etc...)
+
+            if I include 'multiple' the user can select more than one file (clicking with the SHIFT key pressed)
+        -->
+
+        </p>
+        
+        <p>
+            <label for="num">Cellphone Number</label>
+            <input type="number" id="num" name="number" placeholder="Ex.: (+00) 12345-6789" min="6" max="9" step="2">
+
+            <!--
+                This is an Input number, which only accept numbers (and e because is a hexadecimal number)
+                You can limit how many numbers the input will accept, in this case:
+                min="10" - it starts at the number 10
+                max="50" - it ends at the number 50
+
+                You can change the number, one by one, on the arrows at the right side of the box
+                You can change the sum value of these arrows too:
+                    step="5" -> 0 (arrow up) - 5 (arrow up) - 10 (arrow down) - 5...  
+
+            -->
+
+        </p>
+
+        <p>
+            <button type="submit">Send</button>
+            <button type="reset">Reset</button>
+
+        </p>
+
+        </form>
+    </body>
+</html>
+

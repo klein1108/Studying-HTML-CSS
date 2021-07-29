@@ -1,0 +1,174 @@
+<!-- 563 - Tabelas HTML -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>My HTML</title>
+        <!-- Starting the CSS -->
+        <style>
+            .responsive-table{
+                max-width:1000px;
+                overflow-x: auto ;
+            }
+            body table{
+                font-family: sans-serif;
+            }
+
+            table{
+                border-collapse: collapse;
+                width: 5000px;
+            }
+
+            table caption{
+                caption-side: top;
+                text-align: left;
+                font-style: italic;
+                font-size: 14px;
+                margin-bottom: 5px;
+            }
+
+            table td, table th{
+                border: 1px solid #ccc;
+                padding: 5px;
+                text-align: left;
+            }
+
+            table tfoot td, table th{
+                background-color: #bbb;
+            }
+
+            tfoot td{
+                font-style: italic;
+            }
+
+        </style>
+        <!-- End of the CSS -->
+    </head>
+    <body>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <div class="responsive-table">
+            <table>
+                <caption>Essa é uma tabela</caption>
+                <thead>
+                    <tr>
+                        <th>Coluna 1</th>
+                        <th>Coluna 2</th>
+                        <th>Coluna 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Corpo 4</td>
+                        <td>Corpo 5</td>
+                        <td>Corpo 6</td>
+                    </tr>
+                    <tr>
+                        <td>Corpo x</td>
+                        <td colspan="2" rowspan="2" style="text-align: center;">AQUI</td>
+                    </tr>
+                    <tr>
+                        <td>Corpo 12</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Corpo 1</td>
+                        <td>Corpo 2</td>
+                        <td>Corpo 3</td>
+                    </tr>        
+                </tfoot>
+            </table>
+        </div>
+    </body>
+</html>
+<!--
+    >!--(Starting the CSS)--<
+    <style>
+            .responsive-table{
+                max-width:100%;
+                overflow-x: auto ; -> quando passa o flow do conteudo (quando o conteudo passa o tamanho da tela e precisa passar para o lado) -> isso é overflow
+                |_> "x" pq arrasta para a direita, se fosse uma pagina muito extensa verticalmente, seria "y"
+            }
+
+            body table{
+                font-family: sans-serif;    -> mudei a fonte de tudo que esta dentro do table
+            }
+
+            table{
+                border-collapse: collapse; -> grudou as colunas umas nas outras (uniu as bordas)
+               TIRAR-> width: 100%; -> a tabela vai ficar o tamanho da tela, se a tela estiver num tambanho menor, a tabela vai se adaptar para pegar a largura inteira da pagina
+                width: 800%; -> para fazer ficar bem grande e usar o overflow
+            }
+
+            table caption{  -> estou alterando o caption dentro da table
+                caption-side: top; (Default) (pode ser em qualquer lugar, exemplo: caption-side: bottom;)
+                text-align: left; (Default: center -> do caption)
+                font-style: italic; -> italico
+                font-size: 14px;    -> alterando tamanho
+                margin-bottom: 5px 0px; -> tamanho da margem do caption (logo vai aumentar a distancia ente o caption e a tabela)-> o 0 px é pra se caso o caption esteja na parte de baixo da tabela, assim top e bot vao ser 15px, o resto 0px
+            }
+
+            table td, table th{     -> modifica o td dentro do table e modifica o th dentro do table
+                border: 1px solid #ccc;     -> o tamanha da borda fica de 1px e a cor fica cinza
+                padding: 5px;               -> o padding fica com um tamanho de 5px
+                text-align: left;   -> tudo dentro da tabela se alinha para esquerda.
+            }
+
+        </style>
+        >!--(End of the CSS)--<
+
+
+
+    <table> -> tabela(utilizado a muito tempo atras para fazer sites)
+        
+        <caption>Essa é uma tabela</caption>    -> Descrição da tabela
+
+        <thead> -> cabeçalho da tabela
+            <tr>  -> linhas
+                <th>Coluna 1</th> ->coluna
+                <th>Coluna 2</th>
+                <th>Coluna 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Corpo 1</td>    -> Corpo
+                <td>Corpo 2</td>
+                <td>Corpo 3</td>
+            </tr>
+            <tr>
+                <td>Corpo 7</td>
+                <td>Corpo 8</td>
+                <td>Corpo 9</td>
+            </tr>
+            <tr>
+                <td>Corpo 10</td>
+                <td>Corpo 11</td>
+                <td>Corpo 12</td>
+            </tr>
+        </tbody>
+        <tfoot> -> roda pe
+            <tr>
+                <td>Corpo 1</td>    -> Corpo
+                <td>Corpo 2</td>
+                <td>Corpo 3</td>
+            </tr>        
+        </tfoot>
+    </table>
+
+            <tr>
+                <td>AQUI</td>  -> quero que essa parte da tabela pegue o espaço de tres, logo preciso tirar as outras
+            </tr>
+            |_> depois disso colocamos o colspan="3" -> quantas tabelas aquela tabela em especifica vai ocupar. Se eu quisesse que ocupasse somente dois espaços, trocaria o 3 por 2 e deixaria mais um <tr> para manter o formato da tabela
+
+            <tr>
+                <td>Corpo x</td>
+                <td colspan="2" rowspan="2" style="text-align: center;">AQUI</td>
+            </tr>
+            <tr>
+                
+                <td>Corpo 12</td>
+            </tr>
+            ao utilizar o rowspan, ele vai fazer a mesmas coisa que o colspan so que pra cima/baixo, logo preciso retirar os que ele vai tomar o lugar.
+            
+-->

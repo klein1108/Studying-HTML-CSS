@@ -1,0 +1,19 @@
+/*(Pseudo-classe :nth-child())*/
+
+ul li:nth-child(2){
+    background-color: red;
+}
+/* This pseudo-class tell which element of all the same brothers element will be selected
+    even - x 0 x 0
+    odd  - 0 x 0 x
+
+*/
+ul li:nth-child(3n){
+    background-color: purple;
+}
+/* Every three li, the third will had a purple background color (= 3n)*/
+
+ul li:nth-child(3n+5){
+    background-color: pink;
+}
+/* Begining of the fifth element (5), every efter third element will had a pink background color  */

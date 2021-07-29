@@ -1,0 +1,61 @@
+/*( Seletores de Atributos do CSS )*/
+
+[first-attribute~=value1]{
+    color: lightgreen;
+}
+/* I didn't understand the use of "~=" */
+
+/* Used for attributes with words followed by dash (-) */
+[second-attribute|=value]{
+    color: mediumslateblue;
+}
+/* You just tybe the word that is followed by dash, this configuration will set what is betwen the curly brackets for all the attributes
+thas have this typed value ("value -" 'something'). Isn't very usefull*/
+
+[third-attribute^=add]{
+    color: dodgerblue;
+}
+/* This configuration is really usefull, because it set what is between the curly brackets for all the atributes that begin
+with the typed value. For example:
+
+    [third-attribute^=add]{
+        make: something;
+    }
+
+    third-value="add etc"
+    (or)
+    third-value="add-etc"
+    (OR)
+    third-value="addmotherfuckingetc"
+
+    this config will understand that all this attributes begin with the same value of the css setted attribute, and aply the
+    changes or the style-things
+*/
+[fourth-attribute$=end]{
+    color: red;
+}
+/*This setting does basically the same thing as the last one, but the typed attribute needs to end with the same typed value defined*/
+
+[fiveth-attribute*=ç]{
+    color: indigo;
+}
+/* This setting sees if the defined value has the same typed value of the attribute completely 
+    The program sees if this typed value is on the defined attribute to make the process between the curly brackets
+
+    fiveth-attribute="xxxxyxxx" 
+
+    [fiveth-attribute*=y]{
+        make: sometinhg;
+    }
+
+    or
+
+    fiveth-attribute="i dont know how to explain this even in portuguese"
+
+        [fiveth-attribute*=ven in p]{ (-> eVEN IN Portuguese)
+        make: sometinhg;
+    }
+    
+
+    
+*/

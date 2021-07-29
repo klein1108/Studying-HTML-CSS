@@ -1,0 +1,147 @@
+<!-- Formularios e Inputs - Parte 4 -->
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>My HTML</title>
+    </head>
+    <body>
+        <form action="#" method="GET" target="_blank" autocomplete="off">
+        
+        <!-- Password Input -->
+        <p>
+            <label for="senha">Password</label>
+            <input type="password" id="senha" name="password" required minlength="6">
+
+            <!--
+                this is a password input
+                you can use minlenght to establish a minimum amount of characters
+                minlenght="6" -> the minimum amount of characters that the user password needs to be is 6
+            -->
+        </p>
+
+        <!-- Range Input -->
+        <p>
+            <label for="linha">Range:</label>
+            <input type="range" id="linha" name="range" min="0" max="10" step="1">
+
+        <!--
+            this is the range input
+            it has a initial number (min) and a maximum number (max)
+            the step says how many number it will be add or subtracted from the actual value
+            Ex:
+            min="0"
+            max="10"
+            step="2"
+
+            0 --- 2 - 4 - 6 - 8 --- 10
+
+            the default step is always one
+        -->
+        </p>
+
+    <!-- A not very specific example -->
+        <p>
+            <label for="por">Porcent</label>
+            <input type="range" id="linha" name="range" list="trickmarks">
+            <datalist id="trickmarks"> <!-- I didn't understend why the Lis="trickmarks" of the range input is equal to datalist id (="trickmarks")-->
+                <option value="0">
+                <option value="10">
+                <option value="20">
+                <option value="30">
+                <option value="40">
+                <option value="50" label="50%">
+                <option value="60"> 
+                <option value="70">
+                <option value="80">
+                <option value="90">
+                <option value="100" label="100%">
+            </datalist>
+        </p>
+
+        <!-- URL Input -->
+        <p>
+            <label for="link">URL:</label>
+            <input type="url" id="link" name="url">
+        <!-- this is the URL Inpu
+            it has a validation system that if it isn't a link won't be sended
+        -->
+        </p>
+
+        <!-- Search Input -->
+        <p>
+            <label for="pesquisa">Search:</label>
+            <input type="search" id="pesquisa" name="search">
+
+            <!-- this is the search input
+                is not very different of the Text input, it has a X that erases the Input for the user.
+                Is used most of the time for the semantics system. 
+            -->
+        </p>
+
+        <!-- Different Ones -->
+        
+        <!-- SELECT INPUT -->
+        <p>
+            <label for="seleciona">First Select:</label>
+            <select id="seleciona" name="select">
+                <option value="0" selected disabled label="   " hidden>
+                <option value="1">First Year</option>
+                <option value="2" label="Second Year">
+                <option value="3">Third Year</option>
+                <option value="4" label="Fourth Year">
+
+            <!-- 
+                This is the Select Input, where the iputs are already there
+
+                the option is inside the select, and you need to select one option
+
+                You will see and select what was setted in the option Label, but what will be sended to the back-end will be the Value
+
+                You can also set a selected option, then this will be selected when the user open the page for the first time or update it
+                You can also ser a disabled optiom, then the user won't be able to select this one
+                AND you can do like me, that creat a first void option, with the value 0, setted the Selected and Disabled options, so
+                at the first time the user access the page it will be selected, but if the user change it for other one, it can't be selected
+                anymore, unsell you update the page.
+
+                You also can set the "Hiden" in the last option, so after you select other option this going to vanish, using this you
+                don't need to set the "Disabled", but I prefer to set cause in the theory it is still there
+            -->
+            </select>
+        </p>
+        <!-- You can separate into groups if are more than one group-->
+        <p>
+            <label for="seleciona">Second Select:</label>
+            <select id="seleciona" name="select">
+                <optgroup label="Students">
+                    <option value="0" selected disabled label="   " hidden>
+                    <option value="1">First Year</option>
+                    <option value="2" label="Second Year">
+                    <option value="3">Third Year</option>
+                    <option value="4" label="Fourth Year">
+                </optgroup>
+                <optgroup label="Teachers">
+                    <option value="5" label="Morning">
+                    <option value="6" label="Afternoon">
+                    <option value="7" label="Night">
+                </optgroup>
+            </select>               <!-- U NEED CLOSE THIS SHIT -->
+        </p>
+
+        <!-- TEXT AREA -->
+        <p>
+            <label for="area-texto">Textarea:</label>
+            <textarea name="textarea" id="area-texto" cols="20" rows="5"></textarea>
+
+            <!-- 
+                This input is literally a text area
+                where cols represent how many lines this text area will have (will = modal verb) on the vertical
+                and where rows represent how many lines this text area will have (will = modal verb) on the horizontal
+            -->
+        </p>
+
+    </body>
+</html>
+<!--
+
+-->

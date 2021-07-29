@@ -1,0 +1,111 @@
+<!-- Introdução ao CSS Box-Model -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>My HTML</title>
+
+    <!-- Start of CSS -->
+        <style>
+            .section-one, .section-two{
+                box-sizing: border-box;
+            }
+
+            .section-one{
+                width: 260px;
+                height: 200px;
+                background-color: deeppink;
+                background-image: url(https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0,176,3008,1654&wid=4000&hei=2200&scl=0.752);
+                background-size: cover;
+                background-position: center center;
+                color: pink;
+                border: 10px solid black;
+                padding: 5px;
+                margin: 10px;
+            }
+            .section-two{
+                background-color: cyan;
+                width: 200px;
+                height: 150px;
+                border-top-width: 10px;
+                border-top-style: solid;
+                border-color: black;
+                padding: 5px;
+                margin: 20px;
+            }
+
+        </style>
+    <!-- End of CSS -->
+    </head>  
+    <body>
+        <section class="section-one">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum distinctio dolores commodi iure dicta alias velit fugit perspiciatis tempore, voluptates, atque, laboriosam explicabo. Molestias modi temporibus ex ducimus ut quod?
+        </section>
+        <section class="section-two">2</section>
+
+    </body>
+</html>
+<!-- 
+    border: 5px solid black; -> borda: tamanho - estado (linha direta?) - cor;
+    o border tira um pouco do tamanho interno da caixa (content box - caixa de conteudo)
+
+    padding: o padding é praticamente o espaçamento que tem entre o border edge e o content box,
+    se fossemos analizar o "section-one" sem o padding, veriamos que ele estaria grudado com a borda,
+    o que é muito feio em qualquer ponto de vista, ao acrescentarmos o padding, isso muda completamente.
+
+    background-size: cover; -> o fundo vai meio que se ajustar pro tamanho de tela
+    background-position: center center; -> o fundo vai tentar mostrar os pontos que eu coloquei, como eu coloquei center center, ela
+    vai tentar focar no centro (do ponto de vista de cima/baixo) e no centro (no ponto de vista dos lados)
+    se eu colocasse top center -> ela iria focar no topo (onde começa a imagem) e no centro (centro da imagem), logo pegando o centro
+    + inicio de cima da imagem 
+
+    conseguimos ver o padding aborda o conteudo, mas o conteudo nao aborda o padding, a imagem foi tanto pro padding adge quanto pra
+    content box, porem a escrita (conteudo puro) permanece no content box e o padding da suporte de espaçamento
+
+    Margin: a margem é de verdade igual uma margem, porem ela tem uma caracteristica bastante interessante, ao aplicarmos um tamanho
+    pra ela (margin: 20px), estamos dizendo que ela vai ter 20px em todo a sua estrutura (20px cobrindo todo o border, que cobre o
+    padding que cobre o content), mas se colocarmos outro conteudo logo abaixo desta, e aplicarmos as mesmas configurações de 
+    estrutura, podemos ver que ela nao é acumulativa. Ou seja, sendo a margem do conteudo de cima = 20px e a do conteudo de baixo
+    tambem 20px, a margem entre elas vai ser 20px. Ela pega a maior (se for igual ela deixa assim) e usa esse valor. por exemplo
+    
+       .section-one{
+           margin: 20px;
+       }
+       .section-two{
+           margin: 30px;
+       }
+       
+       se elas tiverem uma em contato com a outra, a margem entre elas vai ser de 30 px;
+
+       mas nao se engane, nao significa que ambas as margens vao ser iguais, apenas significa que uma margem chega a encostar no
+       limite do border da outra, enquanto a outra nem chega a encostar.
+
+       para ver as configuraçoes acima, é preciso retirar o:
+
+            .section-one, .section-two{
+                box-sizing: border-box;
+            }
+
+
+            e vamos falar disso também, que é algo que vamos adotar agora para todos os projetos de HTML/CSS:
+            quando colocavamos uma content box com um determinado tamanho e adicionavamos border e padding (a margin n soma na conta)
+            sempre adicionavamos mais a nossa caixa, por exemplo:
+               content: width -> 100px & height -> 50px
+            +
+               padding: 10px (todos os lados = 20px (cima/baixo + lados))
+            +
+               border: 5px (todos os lados = 10px (cima/baixo + lados))
+            ----------------------------------------------------------
+            resultado: caixa com width -> 130px & height -> 80px.
+            Querendo ou nao, isso interfere em muita coisa, e pra um nivel avançado (até no quesito de encomenda, site para outros)
+            isso desformata muita coisa.
+            Logo, esse comando que demos para ambas as seçoes, significa:
+            as bordas e o enchimento (border e padding) vao ser usados no calculo da largura e da altura do meu elemento, ou seja,
+            nao vao crescer. Consequentemente, sempre o meu elemento (content box) vai ter o tamanho que eu especifiquei.
+
+
+
+
+
+
+-->

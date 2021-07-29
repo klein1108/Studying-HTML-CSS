@@ -1,0 +1,52 @@
+/*(Pseudo-Elements) https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-elements */
+
+div ul li::after{
+    content:' - ';
+    background-color: palegoldenrod;
+    color: darkslateblue;
+}
+/*A Pseudo element is something that we visual create but isn't exist on the HTML Code
+    For Example, on this case:
+    
+    (inside the 'ul') ("::after" the 'li') {
+        content:' - '; -> this will apear "::after" the li, inside the ul
+        background-color: palegoldenrod; -> this content will had its own background color
+        color: darkslateblue;   -> this content will also had its own color
+    }
+
+
+*/
+
+div ul li::before{
+    content:' - ';
+    background-color: palegoldenrod;
+    color: darkslateblue;
+}
+/* Same as the last one but ::before the 'li', inside the 'ul'*/
+
+div h2::first-letter{
+    font-size: 50px;
+    display: block;
+    float: left;
+    background-color: darkkhaki;
+    margin: 0 10px 10px 0;
+}
+/* This pseudo-class aplys the changes on the ::first-letter of the h2 inside the div*/
+
+div p::first-line{
+    background-color: pink;
+}
+/* This pseudo-class aplys the changes on the ::first-line of the p inside the div*/
+
+
+div p::selection{
+    font-size: 50px;        /*it can't change the font size*/
+    background-color: black;
+    color: white;
+}
+/* This pseudo-class aplys the changes on the ::selected part of the text (which the mouse pressed and moved around the text) of p inside the div*/
+
+div input::placeholder{
+    color: darkslateblue;
+}
+/* This pseuco-class aplys the specific changes on the ::placeholder part of the input inside the div */

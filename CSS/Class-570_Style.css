@@ -1,0 +1,71 @@
+/* (Seletores Basicos do CSS - Parte 2) */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+/* Seletores para Irmaos (sibling selector)*/
+
+.pai h1+p{
+    color: palegreen;
+}
+/*
+Aqui estou selecionando um p que estiver LOGO DEPOIS/EM SEGUIDA/GRUDADO!(+) a um h1 
+*/
+
+.pai p+h1{
+    color: darksalmon;
+}
+/* Dentro da tag de classe pai, selecionar um h1 depois de um p*/
+
+.pai h1~h2{
+    color: darkseagreen;
+}
+/* Dentro da tag de classe pai, selecionar todos(~) os h2 depois de um h1 
+
+    A mesma coisa eu posso fazer com as classes:
+*/
+
+.father .one~.two{
+    color: mediumslateblue;
+}
+/*
+Seleciona todos os itens da classe "two" depois do item de classe "one"
+*/
+
+.a .um + .dois{
+    color: blue;
+}
+/* Seleciona o primeiro item de classe "dois" depois do todos os items de classe "um"
+ */
+/* Dentro do HTML eu posso criar um atributo proprio, que pode ser modificado pelo js/css, para eu selecioná-lo
+baste eu escrever ele entre colchetes:
+*/
+[meu-atributo]{
+    color: red;
+}
+/* Muitas vezes vamos utilizar elementos dentro do HTML/CSS e alterarmos ele dentro do back-end do javascript, e para que possamos
+fazer isso, é comum que o atributo em questao receba alguma valor, para que caso seja alterado o seu comportamento tambem vai 
+alterar.
+Exemplo:
+
+    meu-atributo="valor"
+
+
+    [meu-atributo = "valor"]{
+        color: red;
+    }
+
+Caso "meu-atributo" mude seu valor de estado:
+    meu atributo="A"
+o css nao vai mais se aplicar para aquela linha.
+
+
+Posso utilizar um elemento que ja tem um valor por padrao, como por exemplo uma tag input:
+*/
+[checked]{
+    width: 50px;
+    height: 50px;
+}
+/* Apenas para mostrar que podemos mexer com elementos que ja estao sendo aplicado algum atributo de valor padrao "checked"
+e que nao influencia em outra mesma tag sem este atributo*/

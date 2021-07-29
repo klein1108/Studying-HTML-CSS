@@ -1,0 +1,74 @@
+/* (Pseudo - Classes) https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-classes*/
+.one{
+    padding-left: 5px;                          /* to be align with the background-color of itself */
+}
+
+.one:hover{ 
+    transition: all 500ms ease-in-out;             /* (ease-in-out: Do a "ease-in-out" transition) (all: on all of the element) (500ms: in a period of 500 millisecond) */
+    background-color: darksalmon;
+    width: 180px;
+}
+/*
+Pseudo-class that works when the user pass the cursos above the element (= hover)
+*/
+
+
+a:link:hover{
+    color: white;
+    background: red;
+}
+/* When the link has never been opened at the computer before (= link)*/
+
+a:visited:hover{
+    color: white;
+    background-color: fuchsia;
+}
+/*  When the link was opened at the computer before (= visited )
+
+    I took the liberty of join the link/visited statement with the hover pseudo-class (link/visited is also a pseudo-class)
+    This make the Active Error happends, so its only usefull if you really want to se if this link has been opened before, but 
+    it needs to put hover after the link active statment
+
+*/
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:active:hover{
+    color: white;
+    background-color: black;
+}
+/* a:active -> It's a pseudo-class that aply the changes when the user is with the cursor above the link and pressing the click buttom
+at the same time.
+
+Mine a:active didn't work, so to make this style process I add a hover pseudo-class after active, so it'll aply the changes when
+the cursor is pressing above the link. -> Fix the bug: Don't put hover after a link pseudo-class statment, or put hover after that
+
+*/
+
+div input:focus{
+    box-shadow: 0 0 5px rgb(200, 0, 0);         /* control the shadow around the box */
+    outline: none;                                 /* it have an outline that makes the box kinda ugly*/
+    border: 1px solid red;                      /* practically the box (border, color, etc)*/
+}
+/* All of the input have a system that when is selected the page focous on it (= focous)*/
+
+div input:disabled{
+    background-color: rgb(200, 0, 0,0.1);
+}
+/* Aply the changes when the input is disabled */
+
+section .inp:checked{
+    width: 50px;
+    height: 50px;
+}
+/* This will increase the checkbox size if checked, and return for default size when it isn't */
+
+section .inp:checked+p{
+    visibility: hidden;
+}/* This works like an if logic statement, when the checkbox is checked the Hello world will disappear*/
+
+.pai .lista li:last-child{
+    background-color: red;
+}
