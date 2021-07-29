@@ -1,0 +1,84 @@
+/*(Especificidade CSS)*/
+/*
+    ID - (prioridade 0)                 
+    (1,0,0)
+
+    classes - (prioridade 1)
+    atributos - (prioridade 1)
+    pseudo-classes - (prioridade 1)
+    (0,1,0)
+
+    Elementos - (prioridade 2)
+    Pseudo-elementos - (prioridade 2)
+    (0,0,1)
+*/
+
+#p{                         /*Seletor especificity (1,0,0)*/
+    background-color: red; 
+}
+.p{                         /*Seletor especificity (0,1,0)*/
+    background-color: yellow;
+}
+
+body div.aa p.pp#pp{
+    background-color: black;
+}
+
+/*-----------------------------------------------------------------------------------------------------
+    inside the body ->  inside the div with a "aa" class -> inside the p with a pp class and a pp id
+        body        ->          div.aa                   ->         p.pp#pp
+
+    Seletor especificity -> (1,2,3)
+------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------
+p{
+    background-color: pink;
+}
+Nothing will happend, cause its Selector especificity is (0,0,1)
+... unless I put !important...
+then:
+------------------------------------------------------------------------------------------------------*/
+p{
+    background-color: pink !important;
+}
+
+
+
+/*On the Especificity way, the ID will always win, and so become the final alteration 
+
+To the class be the last alteration between class and id, it needs to be:
+
+#p.p{                   Seletor especificity -> (1,0,0)+(0,1,0) = (1,1,0)           
+    background-color: yellow;
+}
+
+p#p.p{                Seletor especificity -> (0,0,1)+(1,0,0)+(0,1,0) = (1,1,1)
+    background-color: yellow;
+}
+
+but if the body have also an Id and a class, like -> <body id="bod" class=""bod">
+
+body #b.b p #p .p{     Seletor especificity -> (0,0,1)+(1,0,0)+(0,1,0)+(0,0,1)+(1,0,0)+(0,1,0) = (2,2,2)
+    background-color: yellow;
+}
+
+just for the example, lets add a pseudo-class and a pseudo-element
+
+body #b .b p #p .p::selection:hover{     Seletor especificity -> (0,0,1)+(1,0,0)+(0,1,0)+(0,0,1)+(1,0,0)+(0,1,0)+(0,0,1)+(0,1,0) = (2,3,3)
+    background-color: yellow;
+}
+This definitely wont work, but the if it did, would be the final alteration because of its especiticity
+
+But more especificity than that is puttin style on its html
+like:
+
+<p style="background-color:red;"> This is so much especific, like
+
+Style    ID    Classes    elements
+  1       0       0           0 
+
+
+  but the most especific way, you will literaly force the browser to do it
+is put: !important between what you want and the semicolon(";")
+
+*/
