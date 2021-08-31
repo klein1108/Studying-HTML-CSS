@@ -1,0 +1,93 @@
+/*(Herança e as propriedades que são passadas para elementos filhos)*/
+body{
+    color: red;
+    font-family: sans-serif;
+}
+
+/*
+    This will be inherited for all the tags within/inside it  
+    This also will be inherited by the tags inside an id, for example:
+
+    HTML:
+    <div id="inherited">
+        <p>Lorem</p>
+        <h2>Testing the Inheritance for the tags inside an id tag</h2>
+    </div>
+
+    CSS:
+    #inherited{
+        color: red;
+        font-family: sans-serif;
+    }
+
+    The result as I said, will be the expected. The tags inside the Id tag will
+    Inherit the defined style.
+
+    But if I put a tag outside the Id and if hasn't another CSS style, This tag
+    won't inherit it
+
+
+    if I want that some tag, which has the inheritance system defined, doesn't inherit
+    the setted style, I need to put "Initial" on the tag characteristics that I don't want to get
+    changed, for example:
+    
+    h2{
+    color:initial;
+    }
+
+
+    This doesn't have many examples but if you want that the tag inherit the style
+    you need to put "style tag":inherit;
+
+    For example:    
+
+*/
+    
+    h2{
+        color:inherit;
+        font-family:initial;
+    }
+
+/*
+List of CSS Properties that are Inherited
+There doesn’t seem to be a single definitive source that lists all CSS properties that inherit, but below is a list that’s probably correct, based on a few sources:
+
+- border-collapse
+- border-spacing
+- caption-side
+- color
+- cursor
+- direction
+- empty-cells
+- font-family
+- font-size
+- font-style
+- font-variant
+- font-weight
+- font-size-adjust
+- font-stretch
+- font
+- letter-spacing
+- line-height
+- list-style-image
+- list-style-position
+- list-style-type
+- list-style
+- orphans
+- quotes
+- tab-size
+- text-align
+- text-align-last
+- text-decoration-color
+- text-indent
+- text-justify
+- text-shadow
+- text-transform
+- visibility
+- white-space
+- widows
+- word-break
+- word-spacing
+- word-wrap
+
+*/

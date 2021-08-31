@@ -1,0 +1,34 @@
+/*(Propriedades específicas do Box-Model(largura, altura, padding, border e margin))*/
+.texto{
+    /*display: block;     Default*/
+    background-color: red;
+    /*The display:block is the default display for all divs, all the
+    following changes will be executed, but if I change this
+    display to inline, the changes wouldn't be executed
+    because we don't have the size of the div anymore*/
+    width: 100%;  
+    height: 220px;
+    max-width: 400px;  /*Max width -> maximum size that the width can be*/
+    max-height: 200px;  /*Max height -> maximum size that the height can be*/
+    min-width: 0;
+    min-height: 50px;
+    box-sizing: border-box;
+    padding: 10px 10px;
+    border: 5px solid black;
+    margin: 0 auto 10px auto;
+    /* This config with the max-width centralizes the content
+    in the middle of the page*/
+    overflow: auto; 
+    /*everything that pass the range of the div will be hidden,
+    if I put "overFlow-x -> this will hide just the 
+    mathematically x part of the div, adding a scroll for it
+    But what if I had a text that don't pass the maximum range
+    of the div? So the scroll would be useless!
+    This is why we can put -> overflow:auto;
+    Then the scroll apear atomatically only if the text pass
+    the maximum range of the div
+    "*/
+}
+.texto h1{
+    margin: 5px;
+}

@@ -1,0 +1,98 @@
+/*(Float e Display (Block, Inline-Block e Inline))*/
+
+.grid .col{
+    
+    /*display: block; default*/
+    /*display: inline-block;
+    display:Inline-block have the same propriertie as the
+    display:block and inline,is almost a junction of the two,
+    but isn't precise*/
+
+    /* Old config
+    
+    width: 300px;
+    height: 300px;
+    background-color: plum;
+    margin: 20px;
+    float: left; 
+    */
+
+    /* The css tag float was very used before the creation of the Flex and
+    Flex-somethin in the CSS3 -> and this tag was commum used to organize
+    the objects in the page. The principal funcion/meaning of the float
+    is "use the space that the object need and leave it there for some other
+    object to use"
+    
+    So, after the floating the tag used its space in div and set the other
+    for the next tag to use, this is why all the "col" divs are aligned, 
+    because all of them did that, all set them space in div and leave the
+    other free to the next one.
+    
+    Curious fact is that because this "take its space and leave the rest 
+    for the other ones" all the margins now were added. We saw that the margin
+    overlaps the other, but it doesn't do on this case, because the object is
+    literally setted for all the space that it needs, so the margin is counted
+    too, so the margin of each is being counted individually.  
+
+    # -> "col" div
+    
+    | # # # # # # |
+    | # #         | 
+    
+    But if I put a little paragraph after the grid div?
+    
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium ratione, ab iusto ea quia, sequi ipsum amet neque deserunt tempore fugit dignissimos nam impedit repellendus! Eius nisi alias sapiente ipsum.</p>
+
+    | # # # # # # lorem|
+    | # #              | */
+
+
+    width: 33.33%;
+    height: 300px;
+    box-sizing: border-box; /*Intern padding*/
+    float: left;
+    padding: 10px;
+    /*margin: 10px; -> take this off*/
+     /*background-color: red; -> take this off*/
+
+    /*I can't have three lined box in one line with this configuration*/
+
+    
+
+}  
+
+.grid .col-content{
+    width: 100%;
+    height: 100%;
+    background-color: red;
+
+}
+
+
+/*If I write a lorem after the div, this paragraph will try to squeeze 
+    between the floating divs, making the setting bad again
+
+    to change this I need to clean the space at the left and/or at the right
+    of the floating objects, and to do that we use the clear: side tag,
+
+    And how does it that work?
+
+    After I use a object, still gonna be a little empty space on it, and to warn
+    the page to start after this space, I write (inside of which I want to respect
+    this cleaned space) that I want to clear the size:
+    
+p{
+    clear: both;
+}
+*/
+/* What I can also do is automate this clear using a Pseudo element, like:*/
+
+.grid::after{   /*After the program read the .grid*/
+    content: "";
+    display: block;
+    clear: both;
+}
+/* We don't use this anymore, because we now use the Flexbox or Grid anyway...
+so isn't the end of the world don't understand this (I didn't) but is 
+important to have this class to now how the program behaves on this 
+situations*/
