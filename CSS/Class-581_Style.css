@@ -1,0 +1,66 @@
+div{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 30%;
+    left: 30%;
+
+    background-color: rgb(0,0,0,0.3);
+}
+/* The hexadecimal goes from A to F in the alphabetical letters
+and then starts with the numerals from 1 to 9
+ABCDEF123456789
+
+so to choose the color that I want I need to follow the RGB 
+sequence:
+
+(F means on - 0 means off)
+
+Red Red Green Green Blue Blue
+
+to simplify I can write like this:
+
+#000
+
+this means that first and the second red is 0, as the first
+and second green, as the first and second blue
+
+when I'm repeating the same color argument for all the
+colors, I can just use once for each one:
+
+#F00 = #FF0000;
+
+We can also do(make?) this comparison with only numbers:
+Minimum value = 0 -- maximum value = 225
+
+We only need to put RGB after it:
+rgb(0,127,225);
+
+#000 -> results in the color black, that is equal to -> rgb(0,0,0);
+#FFF -> result in the color white, that is equal to -> rgb(225,225,225);
+
+With you don't know the rgb or the hexadecimal value of the color
+that you want, you can search it on the HTML color codes website.
+
+This website gives you a color palette which you can tinker(mexer[algo/alguem]
+with to find the specific color you want)
+
+When you are creating some program or web application and you want to know
+which colors match, you can search for color pallets, and I'm sure that
+will have a lot of websites with any colors match you want, with the
+generate hexadecimal to the specific color that you chose. 
+
+An other type of color aplication is the rgbA, which is the same thing as
+the rgb but with the Alpha (opacity - I think it is ...written(past conitnuos)... 
+like this/this way/that way etc...)
+
+For example: I want the color black with a little opacity, so:
+
+rgb(0,0,0,0.1 -> equals to 10% of opacity);
+
+You can also use HSL
+
+HSL(hue -> tonalidade ,saturatiom -> saturação ,lightness -> luminosidade)
+
+
+*/
